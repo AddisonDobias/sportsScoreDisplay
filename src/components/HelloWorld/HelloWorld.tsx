@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from './HelloWorld.module.css';
 
 export function HelloWorld() {
@@ -10,6 +10,7 @@ export function HelloWorld() {
 
     const isInCacheMap = useRef(false);
     const cacheMap = useRef<Record<number, boolean>>({});
+
 
     // Handle button click
     const handleClick = () => {
@@ -25,7 +26,6 @@ export function HelloWorld() {
         //Sets state causing re-render
         setRandomInteger(newRandVal);
     }
-
 
     return (
         <div className={styles.container}>
@@ -84,3 +84,4 @@ function randNumber(max: number) {
     const finalVal = Math.ceil(Math.random() * max);
     return finalVal;
 }
+
