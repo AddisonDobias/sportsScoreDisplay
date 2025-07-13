@@ -32,10 +32,10 @@ export function HelloWorld() {
             <h1>Hello World</h1>
             <h3>{"Random Number: " + randomInteger}</h3>
             <p style={isInCacheArr.current ? {color: 'green'} : {color: 'red'}}>
-                {"Is in array cache: " + isInCacheArr.current}
+                {"Cache Array"}
             </p>
             <p style={isInCacheMap.current ? {color: 'green'} : {color: 'red'}}>
-                {"Is in array map: " + isInCacheMap.current}
+                {"Cache Map"}
             </p>            
             <button onClick={handleClick}>Increase count</button>
         </div>
