@@ -14,11 +14,12 @@ export function HelloWorld() {
 
         //Generates a new random number to be set as randomInteger
         const max = 100;
-        const newRandVal = randNumber({max});
+        const newRandVal = randNumber(max);
         
         //Checks if newRandVal has been seen before
         isInCacheArr.current = isInCachedArray(cacheArray.current, newRandVal);
         isInCacheMap.current = isInCachedMap(cacheMap.current, newRandVal);
+
         //Sets state causing re-render
         setRandomInteger(newRandVal);
     }
@@ -28,12 +29,11 @@ export function HelloWorld() {
         <div>
             <p>{"Random Number: " + randomInteger}</p>
             <p>{"Is in array cache: " + isInCacheArr.current}</p>
-            <p>{"Is in array cache: " + isInCacheMap.current}</p>
+            <p>{"Is in array map: " + isInCacheMap.current}</p>
             <button onClick={handleClick}>Increase count</button>
         </div>
     );
 }
-
 
 //Takes in an map of previously seen cached values and returns if exists or adds it
 function isInCachedMap(cacheMap: Record<number, boolean>, numberToFind: number) {
@@ -50,8 +50,6 @@ function isInCachedMap(cacheMap: Record<number, boolean>, numberToFind: number) 
     return false;
 
 }
-
-
 
 //Takes in an array of previously seen cached values and returns if exists or adds it
 function isInCachedArray(cacheArray: number[], numberToFind: number) {
@@ -74,12 +72,8 @@ function isInCachedArray(cacheArray: number[], numberToFind: number) {
 }
 
 
-type RandNumberParams = {
-    max: number;
-}
-
 //Generates a random number given starting, min and max;
-function randNumber({max}: RandNumberParams) {
+function randNumber(max: number) {
     const finalVal = Math.ceil(Math.random() * max);
     return finalVal;
 }
