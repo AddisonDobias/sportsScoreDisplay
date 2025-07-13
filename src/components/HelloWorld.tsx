@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
+import styles from './HelloWorld.module.css';
 
 export function HelloWorld() {
     
     const [randomInteger, setRandomInteger] = useState(0);
+
     const isInCacheArr = useRef(false);
     const cacheArray = useRef<number[]>([]);
 
@@ -26,10 +28,15 @@ export function HelloWorld() {
 
 
     return (
-        <div>
-            <p>{"Random Number: " + randomInteger}</p>
-            <p>{"Is in array cache: " + isInCacheArr.current}</p>
-            <p>{"Is in array map: " + isInCacheMap.current}</p>
+        <div className={styles.container}>
+            <h1>Hello World</h1>
+            <h3>{"Random Number: " + randomInteger}</h3>
+            <p style={isInCacheArr.current ? {color: 'green'} : {color: 'red'}}>
+                {"Is in array cache: " + isInCacheArr.current}
+            </p>
+            <p style={isInCacheMap.current ? {color: 'green'} : {color: 'red'}}>
+                {"Is in array map: " + isInCacheMap.current}
+            </p>            
             <button onClick={handleClick}>Increase count</button>
         </div>
     );
