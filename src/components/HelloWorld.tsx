@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 
 
 export function HelloWorld() {
-
+    
+    // State setup
     const [randomInteger, setRandomInteger] = useState(0);
+    const count = useRef(0);
 
+    // Handle button click
     const handleClick = () => {
         const min = 0;
         const max = 100;
         const newRandVal = randNumber({startingNumber: randomInteger, min, max});
         setRandomInteger(newRandVal);
+        count.current = count.current + 1;
     }
 
     return (
     <div>
-        <p>{"Hello World " + randomInteger}</p>
+        <p>{"Random Number: " + randomInteger}</p>
+        <p>{"Count: " + count.current}</p>
+
         <button onClick={handleClick}>Increase count</button>
     </div>);
 }
