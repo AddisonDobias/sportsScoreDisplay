@@ -3,7 +3,7 @@
 .wrapper{
     padding: 1em;
     margin: 1em;
-    background: rgb(0, 255, 13);
+    background: #6C6C6C;
 }
 
 .row {
@@ -15,7 +15,7 @@
 .col {
     flex-direction: column;
     width: 100%;
-    background: blue;
+    background: #414141;
     display: flex;
     justify-content: center;
     align-items: center;
