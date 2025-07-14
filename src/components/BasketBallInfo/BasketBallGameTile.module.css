@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.wrapper{
+    padding: 1em;
+    margin: 1em;
+    background: rgb(0, 255, 13);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    background: red;
+}
+
+.col {
+    flex-direction: column;
+    width: 100%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamName {
+    font-family: 'Inter';
+
+}

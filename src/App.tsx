@@ -1,5 +1,4 @@
 
-import { HelloWorld } from './components/HelloWorld/HelloWorld'
 import { BasketBallInfo } from './components/BasketBallInfo/BasketBallInfo'
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
   //On button click 
   return (
     <>
-      <HelloWorld />
+      <h1>Addison's Wonder Board</h1>
       <BasketBallInfo/>
     </>
   )

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { exampleResponse } from './exampleResponse';
+import { exampleResponse } from './basketBallHelpers';
 import { BasketballGameTile } from './BasketBallGameTile';
 
 //Calls API endpoint and generates a BasketballGameTile component for each gameb
@@ -14,7 +14,7 @@ export function BasketBallInfo() {
 
     return (
         <div>
-            {data.map((element) => {return (<BasketballGameTile gameData={element}/>)})}
+            {data.map((element: any) => {return (<BasketballGameTile key={element.id} gameData={element}/>)})}
         </div>
     );
 }

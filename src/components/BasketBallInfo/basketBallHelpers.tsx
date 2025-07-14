@@ -1,8 +1,4 @@
-
-
 /*
-
-
 const url = 'https://api-nba-v1.p.rapidapi.com/players/statistics?game=8133';
 const options = {
     method: 'GET',
@@ -19,13 +15,10 @@ try {
 } catch (error) {
     console.error(error);
 }
-
-
-
 */
 
 
-export const exampleResponse ={
+export const exampleResponse = {
   "get": "games/",
   "parameters": {
     "live": "all"
@@ -706,4 +699,10 @@ export const exampleResponse ={
       "nugget": null
     }
   ]
+}
+
+
+export const COLOR = {
+  Grey: '#6C6C6C',
+  Red: '#C8102E',
 }
